@@ -1,25 +1,16 @@
-- name: Install NodeJs
+- name: Install NodeJS
   hosts: all
-  gather_facts: yes
-  become: yes
-  vars:
-      NODEJS_VERSION: "18"
   tasks:
-      - name: Install the gpg key for nodejs LTS
-        apt_key:
-          url: "https://deb.nodesource.com/gpgkey/nodesource.gpg.key"
-          state: present
-
-      - name: Install the nodejs LTS repos
-        apt_repository:
-          repo: "deb https://deb.nodesource.com/node_13.x bionic main"
-          state: present
-          update_cache: yes
-
-      - name: Install the nodejs
-        apt:
-          name:
+    - name: Update the cache
+      apt:
+        name: curl
+        update_cache: yes
+    - name: Download NodeJS package
+      shell: curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+    - name: Install NodeJS
+      apt:
+        name:
           - nodejs
           - npm
-          state: present
-          update_cache: yes
+        state: present
+        update_cache: yes
