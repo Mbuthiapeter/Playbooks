@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/Moringa School.iml" filepath="$PROJECT_DIR$/.idea/Moringa School.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/Playbooks.iml" filepath="$PROJECT_DIR$/Playbooks.iml" />
+>>>>>>> repo-a/master
     </modules>
   </component>
 </project>
